@@ -1,0 +1,36 @@
+{
+    "name": "cgtag/strings",
+    "description": "A tiny library that adds string functions",
+    "keywords": ["php","strings","library"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "cgTag",
+            "homepage": "https://cgTag.com/"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/cgTag/php-strings/issues",
+        "source": "https://github.com/cgTag/php-strings"
+    },
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "cgTag\\Strings\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "cgTag\\Strings\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --no-coverage"
+    }
+}
