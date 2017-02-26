@@ -1,5 +1,5 @@
 {
-    "name": "cgtag/strings",
+    "name": "cgtag/php-strings",
     "description": "A tiny library that adds string functions",
     "keywords": ["php","strings","library"],
     "type": "library",
