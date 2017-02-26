@@ -4,15 +4,8 @@ namespace cgTag\Strings;
 class Strings
 {
     /**
-     * These are Unicode characters that are no language specific.
+     * True if the substring is found in the target string.
      *
-     * @var array
-     */
-    public static $allowed_unicode = [
-        '02B0' => '02FF'
-    ];
-
-    /**
      * @param string $haystack
      * @param string $needle
      * @param bool $ignore_case
@@ -26,6 +19,8 @@ class Strings
     }
 
     /**
+     * True if the target string ends with the substring.
+     *
      * @param string $haystack
      * @param string $needle
      * @param bool $ignore_case
@@ -54,6 +49,8 @@ class Strings
     }
 
     /**
+     * Adds left padding to the string.
+     *
      * @param string $value
      * @param int $length
      * @return string
@@ -83,6 +80,8 @@ class Strings
     }
 
     /**
+     * Adds right padding to the string.
+     *
      * @param string $value
      * @param int $length
      * @return string
@@ -93,6 +92,8 @@ class Strings
     }
 
     /**
+     * True if the substring is found at the start of the string.
+     *
      * @param string $haystack
      * @param string $needle
      * @param bool $ignore_case
@@ -106,7 +107,7 @@ class Strings
     }
 
     /**
-     * Trims are string, but if it's a null returns an empty string.
+     * Trims a string, but if it's a null returns an empty string.
      *
      * @param string|null $value
      * @return string
@@ -117,10 +118,12 @@ class Strings
     }
 
     /**
+     * Ensures that string is encoded using UTF-8.
+     *
      * @param string|null $str
      * @return string|null
      */
-    public static function utf8($str)
+    public static function utf8(string $str = null)
     {
         if ($str === null) {
             return null;
