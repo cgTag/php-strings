@@ -1,5 +1,5 @@
 <?php
-namespace cgTag\Strings\Test\TestCase;
+namespace cgTag\Strings\Test;
 
 use PHPUnit\Framework\TestCase;
 
@@ -21,7 +21,7 @@ abstract class BaseTestCase extends TestCase
     {
         if (!static::$_traits) {
             $ds = DIRECTORY_SEPARATOR;
-            $path = dirname(dirname(__DIR__)) . $ds . 'src' . $ds . 'Traits';
+            $path = dirname(__DIR__) . $ds . 'src' . $ds . 'Traits';
 
             static::$_traits = array_filter(array_map(function ($file) use ($ds, $path) {
                 if ($file === '.' || $file === '..') {

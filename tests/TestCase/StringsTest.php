@@ -2,6 +2,7 @@
 namespace cgTag\Strings\Test\TestCase;
 
 use cgTag\Strings\Strings;
+use cgTag\Strings\Test\BaseTestCase;
 
 class StringsTest extends BaseTestCase
 {
