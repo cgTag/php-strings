@@ -2,6 +2,7 @@
 namespace cgTag\Strings\Test\TestCase\Traits;
 
 use cgTag\Strings\Test\BaseTestCase;
+use cgTag\Strings\Traits\TrimTrait;
 
 class TrimTraitTest extends BaseTestCase
 {
@@ -13,7 +14,9 @@ class TrimTraitTest extends BaseTestCase
      */
     public function shouldTrim($value, $return)
     {
-        $this->markTestSkipped();
+        /** @var TrimTrait $trait */
+        $trait = $this->getMockBuilder(TrimTrait::class)->getMockForTrait();
+        $this->assertSame($return, $trait::trim($value));
     }
 
     /**
@@ -22,7 +25,10 @@ class TrimTraitTest extends BaseTestCase
     public function shouldTrimData(): array
     {
         return [
-
+            ['', ''],
+            [null, ''],
+            [' abc ', 'abc'],
+            ['     ', '']
         ];
     }
 }

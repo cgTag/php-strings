@@ -2,6 +2,7 @@
 namespace cgTag\Strings\Test\TestCase\Traits;
 
 use cgTag\Strings\Test\BaseTestCase;
+use cgTag\Strings\Traits\TokenTrait;
 
 class TokenTraitTest extends BaseTestCase
 {
@@ -10,12 +11,13 @@ class TokenTraitTest extends BaseTestCase
      * @dataProvider shouldReplaceTokensData
      * @param string $str
      * @param array $values
-     * @param string $tokenize
      * @param string $return
      */
-    public function shouldReplaceTokens(string $str, array $values, string $tokenize, string $return)
+    public function shouldReplaceTokens(string $str, array $values, string $return)
     {
-        $this->markTestSkipped();
+        /** @var TokenTrait $trait */
+        $trait = $this->getMockBuilder(TokenTrait::class)->getMockForTrait();
+        $this->assertSame($return, $trait::replaceTokens($str, $values));
     }
 
     /**
@@ -24,7 +26,7 @@ class TokenTraitTest extends BaseTestCase
     public function shouldReplaceTokensData(): array
     {
         return [
-
+            ['{title} ({year})', ['title' => 'Superman', 'year' => 2917], 'Superman (2917)']
         ];
     }
 }
