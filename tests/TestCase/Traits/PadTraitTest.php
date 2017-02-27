@@ -1,5 +1,5 @@
 <?php
-namespace cgTag\Strings\Test\TestCase;
+namespace cgTag\Strings\Test\TestCase\Traits;
 
 use cgTag\Strings\Test\BaseTestCase;
 use cgTag\Strings\Traits\PadTrait;

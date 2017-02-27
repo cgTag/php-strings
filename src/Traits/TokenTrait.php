@@ -12,7 +12,7 @@ trait TokenTrait
      * @param string $tokenize
      * @return string
      */
-    public static function replaceTokens(string $str, array $values, $tokenize = "{%s}"): string
+    public static function replaceTokens(string $str, array $values, string $tokenize = "{%s}"): string
     {
         foreach ($values as $key => $value) {
             if (is_string($value) || is_numeric($value)) {

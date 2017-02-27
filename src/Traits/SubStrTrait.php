@@ -11,7 +11,7 @@ trait SubStrTrait
      * @param bool $ignore_case
      * @return bool
      */
-    public static function contains(string $haystack, string $needle, $ignore_case = false): bool
+    public static function contains(string $haystack, string $needle, bool $ignore_case = false): bool
     {
         return $ignore_case
             ? stripos($haystack, $needle) !== false
@@ -26,7 +26,7 @@ trait SubStrTrait
      * @param bool $ignore_case
      * @return bool
      */
-    public static function endsWith(string $haystack, string $needle, $ignore_case = false): bool
+    public static function endsWith(string $haystack, string $needle, bool $ignore_case = false): bool
     {
         $length = strlen($needle);
         if ($length == 0) {
@@ -45,7 +45,7 @@ trait SubStrTrait
      * @param bool $ignore_case
      * @return bool
      */
-    public static function startsWith(string $haystack, string $needle, $ignore_case = false): bool
+    public static function startsWith(string $haystack, string $needle, bool $ignore_case = false): bool
     {
         return $ignore_case
             ? strtolower(substr($haystack, 0, strlen($needle))) === strtolower($needle)

@@ -26,5 +26,4 @@ trait PadTrait
     {
         return $value . str_repeat(' ', max(0, $length - strlen($value)));
     }
-
 }
